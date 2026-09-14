@@ -68,11 +68,12 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
    jupyter lab credit_risk_eda.ipynb
    ```
 
+<!--
 2. **Provide the dataset:**
 
    Place the Lending Club CSV in the project root as `consumer_credit_records.csv`. The dataset is
    intentionally excluded from Git because it is approximately 1.1 GB.
-   <!-- Download source: https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv?resource=download -->
+   Download source: https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv?resource=download
 
 3. **Run the SQL analysis:**
 
@@ -80,3 +81,4 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
    run `risk_aggregation_queries.sql`. The SQL uses common functions supported
    by both systems, but date expressions may need adjustment for a different
    database engine.
+-->
