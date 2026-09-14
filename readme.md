@@ -1,4 +1,4 @@
-# Lending Club Credit Risk Analysis & Interactive Dashboard
+# Consumer Credit Exposure & Portfolio Risk Diagnostics
 
 **Author:** Gaurav Roy  
 **Domain:** Consumer Finance & Credit Risk  
@@ -60,12 +60,12 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/GauravRoy092/lending_club_risk_analysis.git
-   cd lending_club_risk_analysis
+   git clone https://github.com/GauravRoy092/credit_portfolio_exposure.git
+   cd credit_portfolio_exposure
    python3 -m venv .venv
    source .venv/bin/activate
    python -m pip install -r requirements.txt
-   jupyter lab lending_dashboard.ipynb
+   jupyter lab credit_risk_eda.ipynb
    ```
 
 2. **Provide the dataset:**
