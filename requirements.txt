@@ -1,0 +1,10 @@
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.15
+ipywidgets>=8.0
+jupyterlab>=4.0
+ipykernel>=6.0
+nbformat>=5.9
+nbclient>=0.8
