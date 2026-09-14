@@ -34,11 +34,11 @@ I built static visual wireframes using Python (Matplotlib and Seaborn) to establ
 
 ### 1. Macro Default Rate (The Bottom Line)
 Establishing the historical ratio of fully paid principals versus charged-off assets.
-![Overall Loan Status](images/Python3.png)
+![Overall Loan Status](images/macro_default_distribution.png)
 
 ### 2. Origination Trajectory (Company Growth)
 Mapping year-over-year loan volume to understand periods of hyper-growth versus stabilization.
-![Growth Over Time](images/Python2.png)
+![Growth Over Time](images/origination_volume_trend.png)
 
 ---
 
@@ -52,7 +52,7 @@ The final phase transitioned from static visualizations and SQL queries to an in
 ### The Final Deliverable:
 The dashboard below utilizes a heatmap gradient to instantly highlight maximum portfolio vulnerabilities based on borrower intent.
 
-![Interactive Risk Dashboard](images/Dashboard.png)
+![Interactive Risk Dashboard](images/risk_heatmap_dashboard.png)
 
 ---
 
@@ -70,13 +70,13 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
 
 2. **Provide the dataset:**
 
-   Place the Lending Club CSV in the project root as `loan.csv`. The dataset is
+   Place the Lending Club CSV in the project root as `consumer_credit_records.csv`. The dataset is
    intentionally excluded from Git because it is approximately 1.1 GB.
    <!-- Download source: https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv?resource=download -->
 
 3. **Run the SQL analysis:**
 
-   Import `loan.csv` into a table named `sampley` in SQLite or PostgreSQL, then
-   run `lending_club_risk_analysis.sql`. The SQL uses common functions supported
+   Import `consumer_credit_records.csv` into a table named `sampley` in SQLite or PostgreSQL, then
+   run `risk_aggregation_queries.sql`. The SQL uses common functions supported
    by both systems, but date expressions may need adjustment for a different
    database engine.
