@@ -16,21 +16,21 @@ This project analyzes a large-scale, real-world consumer credit dataset (approxi
 
 ---
 
-## 🛠 Phase 1: Data Architecture & Sanity (SQL & Python)
+## 🛠 Phase 1: Data Architecture & SQL Aggregation
 
-Before calculating financial metrics, the dataset required rigorous cleaning to prevent mathematical corruption in down-funnel aggregations.
+Before calculating financial metrics, the dataset required rigorous querying and cleaning to prevent mathematical corruption in down-funnel aggregations. I used SQL logic to segment borrowers into income tiers and calculate baseline volume.
 
-* **Sparsity Engineering:** Designed programmatic thresholds to drop columns missing >60% of their data (e.g., scrubbed privacy IDs, secondary hardship flags), optimizing memory overhead and computation speed.
-* **Target Isolation:** Filtered out in-flight loans ("Current", "In Grace Period") to isolate terminal statuses ("Fully Paid" vs. "Charged Off"), establishing a clean binary `default_flag` variable.
+*(Below: SQL Aggregation grouping total borrowers and average loan requested by custom Income Brackets)*
+![SQL Income Aggregation](images/sql_income.png)
 
-*(Below: Initial data querying and aggregation validation)*
-![SQL Aggregation](images/Sql%202026-09-14%20at%202.17.55%20AM.png)
+*(Below: SQL query isolating default rate percentages based on Home Ownership status)*
+![SQL Housing Risk](images/sql_housing.png)
 
 ---
 
 ## 📊 Phase 2: Exploratory Data Analysis (EDA)
 
-I built static visual wireframes using Matplotlib and Seaborn to establish baseline company metrics before diving into risk percentages.
+I built static visual wireframes using Python (Matplotlib and Seaborn) to establish baseline company metrics before diving into advanced risk percentages.
 
 ### 1. Macro Default Rate (The Bottom Line)
 Establishing the historical ratio of fully paid principals versus charged-off assets.
@@ -44,8 +44,12 @@ Mapping year-over-year loan volume to understand periods of hyper-growth versus 
 
 ## 📈 Phase 3 & 4: Business Logic & Interactive Dashboard
 
-The final phase transitioned from static visualizations to an interactive data product. Using **Plotly Express** and **ipywidgets**, I engineered a dynamic dashboard that allows stakeholders to filter massive datasets in real-time.
+The final phase transitioned from static visualizations and SQL queries to an interactive data product. Using **Plotly Express** and **ipywidgets**, I engineered a dynamic dashboard that allows stakeholders to filter massive datasets in real-time.
 
+*(Below: SQL logic establishing the risk-adjusted yield and charge-off velocity for specific loan purposes)*
+![SQL Purpose Risk](images/sql_purpose.png)
+
+### The Final Deliverable:
 The dashboard below utilizes a heatmap gradient to instantly highlight maximum portfolio vulnerabilities based on borrower intent.
 
 ![Interactive Risk Dashboard](images/Dashboard.png)
@@ -56,7 +60,7 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/lending_club_risk_analysis.git
+   git clone https://github.com/GauravRoy092/lending_club_risk_analysis.git
    cd lending_club_risk_analysis
    python3 -m venv .venv
    source .venv/bin/activate
@@ -73,5 +77,5 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
 
    Import `loan.csv` into a table named `sampley` in SQLite or PostgreSQL, then
    run `lending_club_risk_analysis.sql`. The SQL uses common functions supported
-   by both systems, but the date expression may need adjustment for a different
-   database engine.# lending_club_risk_analysis
+   by both systems, but date expressions may need adjustment for a different
+   database engine.
