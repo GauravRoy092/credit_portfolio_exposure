@@ -72,6 +72,7 @@ The dashboard below utilizes a heatmap gradient to instantly highlight maximum p
 
    Place the Lending Club CSV in the project root as `loan.csv`. The dataset is
    intentionally excluded from Git because it is approximately 1.1 GB.
+   <!-- Download source: https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv?resource=download -->
 
 3. **Run the SQL analysis:**
 
